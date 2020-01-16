@@ -153,3 +153,14 @@
 - Part of the 1 way data binding pattern
 - `props` means Read Only
   
+## 10. Components
+
+Component in React determine essentially what the user see on the screen in the browser
+
+| Functional Components | Class Components |
+|---|---|
+|- Set up usually as an arrow function | - Set up as an ES6 JS Class |
+| - Return JSX directly | - Also referred to as containers |
+| - Not aware of state | - Have a render function that returns JSX |
+| - Can have optional props | - Aware of state |
+|  | - Can have optional props |
