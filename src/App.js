@@ -7,7 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Component1></Component1>
+        React
+        <Component1 name="moe" age="25"></Component1>
       </div>
     )
   }
