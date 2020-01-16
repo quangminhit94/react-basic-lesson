@@ -218,3 +218,41 @@ Component in React determine essentially what the user see on the screen in the 
    ```js
    import { Component1 } from './functional/Component1'
    ```
+
+## 12. Props in functional components
+
+Declare props in functional component "`functional/Component1.js`"
+
+```js
+import React from 'react'
+
+export const Component1 = props => (
+  <div>
+    {props.name}
+  </div>
+)
+```
+
+Using props in "`App.js`"
+
+```js
+<Component1 name="moe"></Component1>
+```
+
+## 13. Props in Class Component
+
+Using this.props to access props
+
+```js
+export default class Container1 extends Component {
+  render() {
+    return (
+      <div>
+        {this.props.nickname}
+      </div>
+    )
+  }
+}
+```
+
+## 14. import React from 'react'
