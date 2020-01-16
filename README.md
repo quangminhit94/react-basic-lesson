@@ -262,3 +262,15 @@ export default class Container1 extends Component {
   - Example of Non Temporary data: blog posts, comments and user profile data.
   - In React, State is a Javascript Object, a key-value pair
   - Changed with the setState() method
+
+## 15. Initializing State
+
+Super method let us access the properties in functions of parent Class
+
+```js
+constructor(props) {
+  super(props)
+  console.log(props)
+}
+```
+
