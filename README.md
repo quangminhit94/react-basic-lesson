@@ -125,3 +125,23 @@
 | - New server Request with each router change | - Only 1 server request for initial website loading |
 | - Browser reload on each route change | - Browser does not reload with route change |
 | - Relative slower performance | - Very fast performance |
+
+## 8. Displaying Objects in JSX
+
+- Object can not read in this case: ERROR child of the div element can not be an object
+  
+  ```js
+  render() {
+    const var1 = {
+      key1: 'some data'
+    }
+    return (
+      <div className="App">
+        {var1} //Error: Objects are not valid as a React child
+        JSON.stringify(var1) // {"key1":"some data"}
+        {var1.key1} // some data
+      </div>
+    )
+  }
+  ```
+

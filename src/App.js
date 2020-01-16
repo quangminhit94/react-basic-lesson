@@ -1,39 +1,22 @@
 
 import React, { Component } from 'react'
-import axios from 'axios'
-
-const axiosInstance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com'
-})
 
 class App extends Component {
-  state = {
-    counter: 0
-  }
-
-  increment = () => {
-    this.setState({counter: 5})
-  }
 
   render() {
+    const var1 = {
+      key1: 'some data'
+    }
     return (
       <div className="App">
-        <button onClick={this.increment}>Increase</button>
-        <div>
-          {this.state.counter} 
-          Only content here will be changed
-        </div>
-        <div>
-          Content 1 // React framework not change this
-        </div>
-        <div>
-          Content 2 // React framework not change this
-        </div>
-
+        {React.createElement(
+          'div',
+          {className: 'app'},
+          JSON.stringify(var1)
+        )}        
       </div>
     )
   }
 }
-
 
 export default App;
