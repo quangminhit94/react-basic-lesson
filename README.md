@@ -255,4 +255,10 @@ export default class Container1 extends Component {
 }
 ```
 
-## 14. import React from 'react'
+## 14. React State
+
+- Temporary Data
+  - Example: Whenever a user login or not, the page a user is on, or whether the dialog box is open
+  - Example of Non Temporary data: blog posts, comments and user profile data.
+  - In React, State is a Javascript Object, a key-value pair
+  - Changed with the setState() method
