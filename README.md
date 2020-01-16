@@ -164,3 +164,57 @@ Component in React determine essentially what the user see on the screen in the 
 | - Not aware of state | - Have a render function that returns JSX |
 | - Can have optional props | - Aware of state |
 |  | - Can have optional props |
+
+## 11. How Functional component works
+
+### Declare functional Component
+
+1. Declare functional Component use default keyword
+
+   `functional/Component1.js`
+
+   Note: **props => ( )** and default keyword
+
+   ```js
+   import React from 'react'
+
+   const Component1 = props => (
+    <div>
+      Component 1
+    </div>
+   )
+
+   export default Component1
+
+   ```
+
+   Use functional component in `App.js`
+
+   ```js
+   import Component1 from './functional/Component1'
+   ```
+
+2. Declare functional component not use default
+
+   `functional/Component1.js`
+
+   ```js
+   import React from 'react'
+
+   const Component1 = props => {
+     return (
+       <div>
+         Component 1
+       </div>
+     )
+   }
+
+   export default Component1
+
+   ```
+
+   Use functional component in `App.js`
+
+   ```js
+   import { Component1 } from './functional/Component1'
+   ```

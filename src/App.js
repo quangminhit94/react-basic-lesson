@@ -1,19 +1,13 @@
 
 import React, { Component } from 'react'
 
+import { Component1 } from './functional/Component1'
 class App extends Component {
 
   render() {
-    const var1 = {
-      key1: 'some data'
-    }
     return (
       <div className="App">
-        {React.createElement(
-          'div',
-          {className: 'app'},
-          JSON.stringify(var1)
-        )}        
+        <Component1></Component1>
       </div>
     )
   }
