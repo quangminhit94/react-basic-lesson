@@ -145,3 +145,11 @@
   }
   ```
 
+## 9. Props
+
+- Short for properties
+- Functionally Components: Accessed with the syntax "`props`". (name of user defined property)
+- Class Components: Accessed with the syntax "`this.props`". (name of user defined property)
+- Part of the 1 way data binding pattern
+- `props` means Read Only
+  
