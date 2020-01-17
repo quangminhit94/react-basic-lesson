@@ -450,3 +450,9 @@ class Container1 extends Component {
 }
 // this now is Container class Scope so it is correct
 ```
+
+## 28. 3 principles of Redux
+
+|1st Principle | 2nd Principle | 3rd Principle |
+|---|---|---|
+|There is only one source of truth|State is read-only|Change are make with Pure Functions|
