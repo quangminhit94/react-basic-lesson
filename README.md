@@ -323,3 +323,29 @@ changeState = () => {
 }
 ```
 
+## 18. working with multiple state properties
+
+```js
+state = {
+  mystate: 5,
+  mysecondstate: "My State"
+}
+changeState = () => {
+  this.setState({
+    mystate: this.state.mystate + 1,
+    mysecondstate: this.state.mysecondstate + " M"
+  })
+}
+render() {
+  return (
+    <div>
+      <button onClick={this.changeState}>Change state</button>
+      <br/>
+      {this.state.mystate}
+      <br/>
+      {this.state.mysecondstate}
+    </div>
+  )
+}
+```
+
