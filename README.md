@@ -392,3 +392,8 @@ export const Component1 = props => (
 }
 // Condition 3
 ```
+
+## 22. alternate conditional rendering method
+
+## 23. Summary of the 3 ways to conditonally render JSX
+
