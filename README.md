@@ -401,3 +401,8 @@ export const Component1 = props => (
 
 [Life cycle methods](https://www.draw.io/#G1r9sCqe9zw20l3mcV1vox8dkaDUcDoWtF)
 
+## 25. Working with list
+
+- When use Map function? Read an array
+
+Look at the code inside this branch

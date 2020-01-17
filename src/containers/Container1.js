@@ -1,18 +1,42 @@
 import React, { Component } from 'react'
-import {Component1} from '../functional/Component1'
+
 export default class Container1 extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      mystate: 5,
-      mysecondstate: "My State"
+  
+  arr1 = [
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "delectus aut autem",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "quis ut nam facilis et officia qui",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "fugiat veniam minus",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "et porro tempora",
+      "completed": true
     }
-  }
+  ]
+
+  RenderListItem = (props) => (
+  <div>{props.item.id}/ {props.item.title}</div>
+  )
   
   render() {
     return (
       <div>
-        <Component1 prop1={this.state.mysecondstate}></Component1>
+        {this.arr1.map(item => <this.RenderListItem item={item}/> )}   
       </div>
     )
   }
