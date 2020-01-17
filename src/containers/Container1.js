@@ -9,10 +9,14 @@ export default class Container1 extends Component {
       mystate: "My State"
     }
   }
+  // Incorrect
+  changeState = () => {
+    this.state.mystate = "My wrong state"
+  }
   render() {
     return (
       <div>
-        {/* {this.props.nickname} */}
+        <button onClick={this.changeState}>Change state</button>
         {this.state.mystate}
       </div>
     )

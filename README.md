@@ -274,3 +274,26 @@ constructor(props) {
 }
 ```
 
+## 16. Updating state with setState
+
+### Change State
+
+Done through `setState()` function
+
+3 aspect of changing state:
+
+- Do not Mutate state directly
+  
+  ```js
+  state = {
+    mystate: "My state"
+  }
+  // Incorrect
+  changeState = () => {
+    this.state.mystate = "My wrong state"
+  }
+  ```
+  
+- Change the state by referencing the previous state
+- React will merge the old state with the new state
+
