@@ -369,3 +369,8 @@ export const Component1 = props => (
 <Component1 prop1={this.state.mysecondstate}></Component1>
 ```
 
+## 20. conditionally rendering in JSX
+
+```js
+{condition ? code block if true : code block if false}
+```
