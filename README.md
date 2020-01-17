@@ -374,3 +374,21 @@ export const Component1 = props => (
 ```js
 {condition ? code block if true : code block if false}
 ```
+
+## 21. Ternary expression
+
+```js
+{true
+  ? true ? <div>Condition 1</div> : <div>Condition 2</div>
+  : false ? <div>Condition 3</div> : <div>Condition 4</div>
+}
+// Condition 1
+```
+
+```js
+{false
+  ? true ? <div>Condition 1</div> : <div>Condition 2</div>
+  : true ? <div>Condition 3</div> : <div>Condition 4</div>
+}
+// Condition 3
+```
