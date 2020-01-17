@@ -9,9 +9,9 @@ export default class Container1 extends Component {
       mystate: "My State"
     }
   }
-  // Incorrect
+  
   changeState = () => {
-    this.state.mystate = "My wrong state"
+    this.setState({mystate: "My new state"})
   }
   render() {
     return (
