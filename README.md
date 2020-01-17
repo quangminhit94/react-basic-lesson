@@ -297,3 +297,29 @@ Done through `setState()` function
 - Change the state by referencing the previous state
 - React will merge the old state with the new state
 
+## 17. updating state with the previous state
+
+Change the state by referencing the previous state
+
+```js
+state = {
+  mystate: 5
+}
+changeState = () => {
+  this.setState((preState, props) => ({
+    mystate: preState.mystate + 1
+  }))
+}
+```
+
+or
+
+```js
+state = {
+  mystate: 5
+}
+changeState = () => {
+  this.setState({mystate: this.state.mystate + 1})
+}
+```
+

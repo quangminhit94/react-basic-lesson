@@ -6,12 +6,12 @@ export default class Container1 extends Component {
     console.log(this.props)
     console.log(props)
     this.state = {
-      mystate: "My State"
+      mystate: 5
     }
   }
   
   changeState = () => {
-    this.setState({mystate: "My new state"})
+    this.setState({mystate: this.state.mystate + 1})
   }
   render() {
     return (
