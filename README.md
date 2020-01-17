@@ -397,3 +397,7 @@ export const Component1 = props => (
 
 ## 23. Summary of the 3 ways to conditonally render JSX
 
+## 24. Lifecycle methods
+
+[Life cycle methods](https://www.draw.io/#G1r9sCqe9zw20l3mcV1vox8dkaDUcDoWtF)
+
