@@ -36,7 +36,7 @@ export default class Container1 extends Component {
   render() {
     return (
       <div>
-        {this.arr1.map((item, index) => <this.RenderListItem key={item.id} item={item}/> )}   
+        {this.arr1.map((item, index) => <this.RenderListItem key={item.id} item={item}/> )}
       </div>
     )
   }

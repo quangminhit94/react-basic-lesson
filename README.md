@@ -406,3 +406,47 @@ export const Component1 = props => (
 - When use Map function? Read an array
 
 Look at the code inside this branch
+
+## 26. working with forms
+
+NOTE:
+
+Function without arrow function need bind this from function scope to class scope
+
+```js
+class Container1 extends Component {
+  constructor(props) {
+    super(props)
+    this.handleChange = this.handleChange.bind(this)
+  }
+  handleChange(event) {
+    this.setState({value: event.target.value})
+  }
+  render() {
+    return (
+      <div>
+        <input onChange={this.handleChange} type="text" />
+      </div>
+    )
+  }
+}
+// this now is undefined because this is in function scope
+```
+
+Function with arrow function does not need to bind this
+
+```js
+class Container1 extends Component {
+  handleChange = (event) => {
+    this.setState({value: event.target.value})
+  }
+  render() {
+    return (
+      <div>
+        <input onChange={this.handleChange} type="text" /> 
+      </div>
+    )
+  }
+}
+// this now is Container class Scope so it is correct
+```
