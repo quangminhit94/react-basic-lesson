@@ -349,3 +349,23 @@ render() {
 }
 ```
 
+## 19. Passing down state as props
+
+`Component1.js`
+
+```js
+import React from 'react'
+
+export const Component1 = props => (
+  <div>
+    {props.prop1}
+  </div>
+)
+```
+
+`Container1.js`
+
+```js
+<Component1 prop1={this.state.mysecondstate}></Component1>
+```
+
