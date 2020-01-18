@@ -40,3 +40,18 @@ For example: If you want to **save the user input to the state**. You would **se
 
 `(user_input_text) => (type: "USER_INPUT", payload: (user_input_text) )`
 
+## 32. Reducers
+
+- Directly change redux state
+- Must be "pure" or can NOT be async
+- Take "state" and action as parameters
+- Usually setup as a switch statement
+- Each case statement has to match an action type
+
+```js
+case ACTION_TYPES.LOGIN_SUCCESS:
+  return {
+    ...state,
+    isAuthenticated: true
+  }
+```
