@@ -180,7 +180,12 @@ case ACTION_TYPES.LOGIN_SUCCESS:
 - Essentially how to get State from Redux
 - Property in return statement is user defined
 - Set the value to `state.` (name of reducer if more than one) `.` (name of property from reducer)
-- In React render method use `this.props`. name of property you set.
+- In React render method use `this.props.`name of property you set.
 
+## 37. mapDispatchToProps
 
-- 
+- How to change the state by dispatching actions
+- Actions can be plain or async action creators
+- Actions can have an optional payload
+- To dispatch actions use the syntax `this.props.`name of the property you set.
+
