@@ -189,3 +189,4 @@ case ACTION_TYPES.LOGIN_SUCCESS:
 - Actions can have an optional payload
 - To dispatch actions use the syntax `this.props.`name of the property you set.
 
+## 38. The connect method
