@@ -174,3 +174,13 @@ case ACTION_TYPES.LOGIN_SUCCESS:
 
   export default connect(mapStateToProps, mapDispatchToProps)(Container1)
   ```
+
+## 36. mapStateToProps
+
+- Essentially how to get State from Redux
+- Property in return statement is user defined
+- Set the value to `state.` (name of reducer if more than one) `.` (name of property from reducer)
+- In React render method use `this.props`. name of property you set.
+
+
+- 
