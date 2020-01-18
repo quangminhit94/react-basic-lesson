@@ -1,44 +1,29 @@
 import React, { Component } from 'react'
 
-export default class Container1 extends Component {
-  
-  arr1 = [
-    {
-      "userId": 1,
-      "id": 1,
-      "title": "delectus aut autem",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 2,
-      "title": "quis ut nam facilis et officia qui",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 3,
-      "title": "fugiat veniam minus",
-      "completed": false
-    },
-    {
-      "userId": 1,
-      "id": 4,
-      "title": "et porro tempora",
-      "completed": true
-    }
-  ]
+import * as ACTION_TYPES from '../store/actions/action_types'
+import * as ACTIONS from '../store/actions/actions'
 
-  RenderListItem = (props) => (
-  <div>{props.item.id}/ {props.item.title}</div>
-  )
+import { connect } from 'react-redux'
+
+class Container1 extends Component {
   
   render() {
     return (
       <div>
-        {this.arr1.map((item, index) => <this.RenderListItem key={item.id} item={item}/> )}
+        <button onClick={console.log(this.state)}>Get State</button>
+        <button onClick={console.log(this.state)}>Dispatch Action 1</button>
+        <button onClick={console.log(this.state)}>Dispatch Action 2</button>
       </div>
     )
   }
 }
 
+function mapStateToProps(state) {
+  
+}
+
+function mapDispatchToProps(dispatch) {
+  
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Container1)
