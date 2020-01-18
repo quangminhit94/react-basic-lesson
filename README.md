@@ -29,3 +29,14 @@ Actions is a javascript Object has 1 type property is one String, which describe
 
 For example: **an action with type "login_success" might change a property of Redux state called isAuthenticated from false to true**
 
+## 31. Action Creators
+
+- Can dispatch action asynchronously
+- A function which dispatches a normal action
+- Allow for dynamically setting the payload property
+- No changes required to the reducer
+  
+For example: If you want to **save the user input to the state**. You would **set up an action creator with an arrow function** like so:
+
+`(user_input_text) => (type: "USER_INPUT", payload: (user_input_text) )`
+
