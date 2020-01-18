@@ -63,23 +63,23 @@ case ACTION_TYPES.LOGIN_SUCCESS:
   `store/actions/action_types.js`
 
   ```js
-    export const SUCCESS = 'SUCCESS'
+  export const SUCCESS = 'SUCCESS'
 
-    export const FAILURE = 'FAILURE'
+  export const FAILURE = 'FAILURE'
   ```
 
   `store/actions/actions.js`
 
   ```js
-    import * as ACTION_TYPES from './action_types'
+  import * as ACTION_TYPES from './action_types'
 
-    export const SUCCESS = {
-      type: ACTION_TYPES.SUCCESS
-    }
+  export const SUCCESS = {
+    type: ACTION_TYPES.SUCCESS
+  }
 
-    export const FAILURE = {
-      type: ACTION_TYPES.FAILURE
-    }
+  export const FAILURE = {
+    type: ACTION_TYPES.FAILURE
+  }
   ```
 
 - Step 2: Create a reducer
@@ -87,29 +87,52 @@ case ACTION_TYPES.LOGIN_SUCCESS:
   `store/reducers/reducer1.js`
 
   ```js
-    import * as ACTION_TYPES from '../actions/action_types'
+  import * as ACTION_TYPES from '../actions/action_types'
 
-    const initialState = {
-      isAuthenticated: false
+  const initialState = {
+    isAuthenticated: false
+  }
+
+  const rootReducer = (state = initialState, action) => {
+    switch (action.type) {
+
+      case ACTION_TYPES.SUCCESS:
+        return {
+          ...state,
+          isAuthenticated: true
+        }
+      case ACTION_TYPES.FAILURE:
+        return {
+          ...state,
+          isAuthenticated: false
+        }
+      default:
+        return state
     }
+  }
 
-    const rootReducer = (state = initialState, action) => {
-      switch (action.type) {
+  export default rootReducer
+  ```
 
-        case ACTION_TYPES.SUCCESS:
-          return {
-            ...state,
-            isAuthenticated: true
-          }
-        case ACTION_TYPES.FAILURE:
-          return {
-            ...state,
-            isAuthenticated: false
-          }
-        default:
-          return state
-      }
-    }
+## 34. Create Store
 
-    export default rootReducer
+- Step 4: create Store
+  
+  `index.js`
+
+  ```js
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import App from './App';
+
+  import { Provider } from 'react-redux'
+  import rootReducer from './store/reducers/reducer1'
+  import { createStore } from 'redux'
+
+  let store = createStore(rootReducer)
+
+  ReactDOM.render(<Provider store={store}>
+                    <App />
+                  </Provider>, document.getElementById('root'));
+
   ```
