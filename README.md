@@ -58,3 +58,58 @@ case ACTION_TYPES.LOGIN_SUCCESS:
 
 ## 33. Setting up the actions and reducer
 
+- Step 1: Create actions and action types
+
+  `store/actions/action_types.js`
+
+  ```js
+    export const SUCCESS = 'SUCCESS'
+
+    export const FAILURE = 'FAILURE'
+  ```
+
+  `store/actions/actions.js`
+
+  ```js
+    import * as ACTION_TYPES from './action_types'
+
+    export const SUCCESS = {
+      type: ACTION_TYPES.SUCCESS
+    }
+
+    export const FAILURE = {
+      type: ACTION_TYPES.FAILURE
+    }
+  ```
+
+- Step 2: Create a reducer
+  
+  `store/reducers/reducer1.js`
+
+  ```js
+    import * as ACTION_TYPES from '../actions/action_types'
+
+    const initialState = {
+      isAuthenticated: false
+    }
+
+    const rootReducer = (state = initialState, action) => {
+      switch (action.type) {
+
+        case ACTION_TYPES.SUCCESS:
+          return {
+            ...state,
+            isAuthenticated: true
+          }
+        case ACTION_TYPES.FAILURE:
+          return {
+            ...state,
+            isAuthenticated: false
+          }
+        default:
+          return state
+      }
+    }
+
+    export default rootReducer
+  ```
