@@ -55,3 +55,6 @@ case ACTION_TYPES.LOGIN_SUCCESS:
     isAuthenticated: true
   }
 ```
+
+## 33. Setting up the actions and reducer
+
