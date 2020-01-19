@@ -17,6 +17,10 @@ class Container1 extends Component {
         <button onClick={() => this.props.action_creator1()}>Dispatch Action Creator 1</button>
         <button onClick={() => this.props.action_creator2()}>Dispatch Action Creator 2</button>
         <button onClick={() => this.props.action_creator3(user_text)}>Dispatch Action Creator 3</button>
+        {this.props.isAuthenticated
+          ? <h1>{this.props.user_text}</h1>
+          : null
+        }
       </div>
     )
   }

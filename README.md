@@ -244,6 +244,8 @@ Connect React container with the Redux store
 
 ## 42. Setting up action creators
 
+## 43. Passing in data to action creators
+
 - Step 7:
 
   `actions.js`
@@ -288,3 +290,8 @@ Connect React container with the Redux store
     }
   }
   ```
+
+## 44. Getting our data from redux state
+
+## 45. Rendering data to the UI
+
