@@ -1,7 +1,8 @@
 import * as ACTION_TYPES from '../actions/action_types'
 
 const initialState = {
-  isAuthenticated: false
+  isAuthenticated: false,
+  user_text: ''
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -16,6 +17,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: false
+      }
+    case ACTION_TYPES.USER_INPUT:
+      return {
+        ...state,
+        user_text: action.payload
       }
     default:
       return state
