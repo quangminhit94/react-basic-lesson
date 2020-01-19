@@ -236,3 +236,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(Container1)
 ```
 
+## 40. Summarizing The Redux flow
+
+## 41. Testing our React Redux container
+
