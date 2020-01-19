@@ -28,8 +28,8 @@ class Container1 extends Component {
 
 function mapStateToProps(state) {
   return {
-    isAuthenticated: state.isAuthenticated,
-    user_text: state.user_text
+    isAuthenticated: state.reducer1.isAuthenticated,
+    user_text: state.user_reducer.user_text
   }
 }
 

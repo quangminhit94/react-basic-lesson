@@ -295,3 +295,89 @@ Connect React container with the Redux store
 
 ## 45. Rendering data to the UI
 
+## 46. multiple reducers
+
+- Step 7:
+  
+  `store/reducers/index.js`
+
+  ```js
+  import Reducer1 from './reducer1'
+  import UserReducer from './user_reducer'
+
+  import { combineReducers } from "redux";
+
+  const rootReducer = combineReducers({
+    reducer1: Reducer1,
+    user_reducer: UserReducer
+  })
+
+  export default rootReducer
+  ```
+
+  `store/reducers/reducer1.js`
+  
+  ```js
+    import * as ACTION_TYPES from '../actions/action_types'
+
+  const initialState = {
+    isAuthenticated: false,
+  }
+
+  const Reducer1 = (state = initialState, action) => {
+    switch (action.type) {
+
+      case ACTION_TYPES.SUCCESS:
+        return {
+          ...state,
+          isAuthenticated: true
+        }
+      case ACTION_TYPES.FAILURE:
+        return {
+          ...state,
+          isAuthenticated: false
+        }
+      default:
+        return state
+    }
+  }
+
+  export default Reducer1
+  ```
+
+  `store/reducers/user_reducer.js`
+
+  ```js
+  import * as ACTION_TYPES from '../actions/action_types'
+
+  const initialState = {
+    user_text: ''
+  }
+
+  const userReducer = (state = initialState, action) => {
+    switch (action.type) {
+
+      case ACTION_TYPES.USER_INPUT:
+        return {
+          ...state,
+          user_text: action.payload
+        }
+      default:
+        return state
+    }
+  }
+
+  export default userReducer
+
+  ```
+
+  `Container1.js`
+
+  ```js
+  function mapStateToProps(state) {
+    return {
+      isAuthenticated: state.reducer1.isAuthenticated,
+      user_text: state.user_reducer.user_text
+    }
+  }
+  ```
