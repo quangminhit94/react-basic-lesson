@@ -199,44 +199,82 @@ Connect React container with the Redux store
 
 ## 39. Connecting a container to React Redux
 
-```js
-import React, { Component } from 'react'
+- Step 6:
 
-import * as ACTION_TYPES from '../store/actions/action_types'
-import * as ACTIONS from '../store/actions/actions'
+  ```js
+  import React, { Component } from 'react'
 
-import { connect } from 'react-redux'
+  import * as ACTION_TYPES from '../store/actions/action_types'
+  import * as ACTIONS from '../store/actions/actions'
 
-class Container1 extends Component {
-  
-  render() {
-    return (
-      <div>
-        <button onClick={() => console.log(this.props.isAuthenticated)}>Get State</button>
-        <button onClick={() => this.props.action1()}>Dispatch Action 1</button>
-        <button onClick={() => this.props.action2()}>Dispatch Action 2</button>
-      </div>
-    )
+  import { connect } from 'react-redux'
+
+  class Container1 extends Component {
+    
+    render() {
+      return (
+        <div>
+          <button onClick={() => console.log(this.props.isAuthenticated)}>Get State</button>
+          <button onClick={() => this.props.action1()}>Dispatch Action 1</button>
+          <button onClick={() => this.props.action2()}>Dispatch Action 2</button>
+        </div>
+      )
+    }
   }
-}
 
-function mapStateToProps(state) {
-  return {
-    isAuthenticated: state.isAuthenticated
+  function mapStateToProps(state) {
+    return {
+      isAuthenticated: state.isAuthenticated
+    }
   }
-}
 
-function mapDispatchToProps(dispatch) {
-  return {
-    action1: () => dispatch(ACTIONS.SUCCESS),
-    action2: () => dispatch(ACTIONS.FAILURE)
+  function mapDispatchToProps(dispatch) {
+    return {
+      action1: () => dispatch(ACTIONS.SUCCESS),
+      action2: () => dispatch(ACTIONS.FAILURE)
+    }
   }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Container1)
-```
+  export default connect(mapStateToProps, mapDispatchToProps)(Container1)
+  ```
 
 ## 40. Summarizing The Redux flow
 
 ## 41. Testing our React Redux container
 
+## 42. Setting up action creators
+
+- Step 7:
+
+  `actions.js`
+
+  ```js
+  // action creators
+  export const success = () => {
+    return {
+      type: ACTION_TYPES.SUCCESS
+    }
+  }
+
+  export const failure = () => {
+    return {
+      type: ACTION_TYPES.FAILURE
+    }
+  }
+  ```
+
+  `Container1.js`
+
+  ```js
+  <button onClick={() => this.props.action_creator1()}>Dispatch Action Creator 1</button>
+  <button onClick={() => this.props.action_creator2()}>Dispatch Action Creator 2</button>
+
+  function mapDispatchToProps(dispatch) {
+    return {
+      action1: () => dispatch(ACTIONS.SUCCESS),
+      action2: () => dispatch(ACTIONS.FAILURE),
+      action_creator1: () => dispatch(ACTIONS.success()),
+      action_creator2: () => dispatch(ACTIONS.failure())
+    }
+  }
+  ```
